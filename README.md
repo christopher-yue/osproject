@@ -11,5 +11,5 @@
     make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
   clean:
     make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean```
-- run the make command in the terminal
+- run the `make` command in the terminal
 - run `sudo insmod [filename].ko` in terminal
