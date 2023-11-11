@@ -6,10 +6,10 @@
 
 ## How to insert module into kernel
 - create makefile
-  obj-m = [filename].o
+  ```obj-m = [filename].o
   all:
     make -C /lib/modules/$(shell uname -r)/build/ M=$(PWD) modules
   clean:
-    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean```
 - run the make command in the terminal
 - run `sudo insmod [filename].ko` in terminal
