@@ -29,6 +29,7 @@ static void my_usb_disconnect(struct usb_interface *intf) {
 }
 
 static struct usb_driver my_usb_driver = {
+    .owner = THIS_MODULE,
     .name = "my_usb_devdrv",
     .id_table = usb_dev_table,
     .probe = my_usb_probe,
