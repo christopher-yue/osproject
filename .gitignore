@@ -4,6 +4,7 @@
 *.mod.c
 *.mod.o
 *.o
+*.o.d
 Makefile
 main
 *.symvers
