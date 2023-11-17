@@ -7,9 +7,11 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Christopher Yue");
 MODULE_DESCRIPTION("Basic driver for macropad");
 
-#define VENDOR_ID 0x1189
-#define PRODUCT_ID 0x8890
+// vendor and product id of device
+#define VENDOR_ID 0x045e
+#define PRODUCT_ID 0x02e3
 
+// defines what devices this driver will be for
 static struct usb_device_id usb_dev_table [] = {
     { USB_DEVICE(VENDOR_ID, PRODUCT_ID) },
     {},
@@ -21,6 +23,7 @@ static int my_usb_probe(struct usb_interface *intf, const struct usb_device_id *
     return 0;
 }
 
+// called when usb device is disconnected
 static void my_usb_disconnect(struct usb_interface *intf) {
     printk("my_usb_devdrv - Disconnect Function\n");
 }
@@ -32,9 +35,7 @@ static struct usb_driver my_usb_driver = {
     .disconnect = my_usb_disconnect,
 };
 
-/**
- * @brief This function is called, when the module is loaded into the kernel
- */
+// called when module is loaded into kernel
 static int __init my_init(void) {
     int result;
     printk("my_usb_devdrv - Init Function\n");
@@ -47,9 +48,7 @@ static int __init my_init(void) {
     return 0;
 }
 
-/**
- * @brief This function is called, when the module is removed from the kernel
- */
+// called when module is removed from the kernel
 static void __exit my_exit(void) {
     printk("my_usb_devdrv - Exit Function\n");
     usb_deregister(&my_usb_driver);
