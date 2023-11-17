@@ -31,7 +31,6 @@ static void my_usb_disconnect(struct usb_interface *intf) {
 
 // describes the USB driver to the USB core
 static struct usb_driver my_usb_driver = {
-    .owner = THIS_MODULE,
     .name = "usb_drv_helloworld",
     .id_table = usb_dev_table,
     .probe = my_usb_probe,
