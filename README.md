@@ -1,2 +1,2 @@
-# Custom Xbox Controller Driver
+# Linux Custom Xbox Controller Driver
 Using the XBox Elite Controller Series 1
